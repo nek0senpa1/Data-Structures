@@ -45,14 +45,36 @@ class DoublyLinkedList:
 
     #yeah... stared at this for a while, i'm gonna need some better instruction/resources, our lesson today showed no implementation of the content...
 
-  def add_to_head(self, value):
-    pass
 
+
+  def add_to_head(self, value):
+    new node = ListNode(value)
+    
+    if not self.head:
+      self.head = new_node
+
+    else:
+      self.prev.head = new_node
+
+ 
+ 
   def remove_from_head(self):
     pass
 
+
+
   def add_to_tail(self, value):
-    pass
+    new_node = ListNode(value)
+
+    if not self.tail:
+      self.tail = new_node
+
+    else:
+      self.prev.tail = new node
+
+
+
+
 
   def remove_from_tail(self):
     pass
