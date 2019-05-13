@@ -43,6 +43,8 @@ class DoublyLinkedList:
   def __len__(self):
     return self.length
 
+    #yeah... stared at this for a while, i'm gonna need some better instruction/resources, our lesson today showed no implementation of the content...
+
   def add_to_head(self, value):
     pass
 
