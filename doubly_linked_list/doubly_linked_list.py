@@ -74,8 +74,7 @@ class DoublyLinkedList:
       self.head.prev = new_node
       self.head = new_node
 
- 
- 
+  
   def remove_from_head(self):
     
     if not self.head and not self.tail:
@@ -97,12 +96,34 @@ class DoublyLinkedList:
     return old_head
 
 
-
   def add_to_tail(self, value):
-    pass
+    new_tail = ListNode(value)
+    self.length = self.length +1
+
+    if not self.head and not self.tail:
+      self.head = new_tail
+      self.tail = new_tail
+
+    else:
+      new_tail.prev = self.tail
+      self.tail.next = new_tail
+      self.tail = new_tail
 
   def remove_from_tail(self):
-    pass
+    
+    if not self.head and not self.tail:
+      return None
+
+    if self.tail == self.head:
+      old_tail = self.tail
+      self.head = None
+      self.tail = None
+
+      return old_tail
+
+    old_tail = self.tail
+    self.tail = self.tail.prev
+    self.tail.next = None
 
   def move_to_front(self, node):
     pass
@@ -126,5 +147,15 @@ stuff.add_to_head('tom')
 print(stuff)
 
 stuff.remove_from_head()
+
+print(stuff)
+
+stuff.add_to_tail('cheryl')
+stuff.add_to_tail('roger')
+stuff.add_to_tail('is dead')
+
+print(stuff)
+
+stuff.remove_from_tail()
 
 print(stuff)
