@@ -72,8 +72,6 @@ class DoublyLinkedList:
 
 
 
-
-
   def remove_from_tail(self):
     pass
 
@@ -88,3 +86,8 @@ class DoublyLinkedList:
     
   def get_max(self):
     pass
+
+DoublyLinkedList.add_to_head('bob')
+DoublyLinkedList.add_to_tail('susan')
+
+print(DoublyLinkedList())
