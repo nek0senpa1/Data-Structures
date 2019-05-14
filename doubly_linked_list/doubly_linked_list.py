@@ -48,29 +48,58 @@ class DoublyLinkedList:
   def __len__(self):
     return self.length
 
-    #yeah... stared at this for a while, i'm gonna need some better instruction/resources, our lesson today showed no implementation of the content...
+  def __str__(self):
+    s = ""
+    if self.length == 0:
+      return "List is empty"
 
-    #yeah... I still don't understand what this is trying to accomplish, and trying to accomplish it without an example is making it EXTEREMELY difficult to learn...
+    current = self.head
+    while current:
+      s += current.value
+      s += " "
+      current = current.next
+    return s
 
 
   def add_to_head(self, value):
-    new_node = DoublyLinkedList(value)
+    new_node = ListNode(value)
+    self.length = self.length +1
     
-    self.head = new_node
+    if not self.head and not self.tail:
+      self.head = new_node
+      self.tail = new_node
+
+    else: 
+      new_node.next = self.head
+      self.head.prev = new_node
+      self.head = new_node
 
  
  
   def remove_from_head(self):
-    pass
+    
+    if not self.head and not self.tail:
+      return None
+    
+    self.length = self.length -1
+
+    if self.head == self.tail:
+      old = self.head
+      self.head = None
+      self.tail = None
+
+      return old
+
+    old_head = self.head
+    self.head = self.head.next
+    self.head.prev = None
+    
+    return old_head
 
 
 
   def add_to_tail(self, value):
-    new_node = DoublyLinkedList(value)
-
-    self.tail = new_node
-
-
+    pass
 
   def remove_from_tail(self):
     pass
@@ -87,7 +116,15 @@ class DoublyLinkedList:
   def get_max(self):
     pass
 
-DoublyLinkedList.add_to_head('bob')
-DoublyLinkedList.add_to_tail('susan')
 
-print(DoublyLinkedList())
+stuff = DoublyLinkedList()
+
+stuff.add_to_head('bob')
+stuff.add_to_head('susan')
+stuff.add_to_head('tom')
+
+print(stuff)
+
+stuff.remove_from_head()
+
+print(stuff)
