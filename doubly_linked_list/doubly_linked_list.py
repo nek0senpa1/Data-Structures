@@ -32,6 +32,11 @@ class ListNode:
     if self.next:
       self.next.prev = self.prev
 
+
+
+
+
+
 """Our doubly-linked list class. It holds references to
 the list's head and tail nodes."""
 class DoublyLinkedList:
@@ -45,16 +50,13 @@ class DoublyLinkedList:
 
     #yeah... stared at this for a while, i'm gonna need some better instruction/resources, our lesson today showed no implementation of the content...
 
+    #yeah... I still don't understand what this is trying to accomplish, and trying to accomplish it without an example is making it EXTEREMELY difficult to learn...
 
 
   def add_to_head(self, value):
-    new_node = ListNode(value)
+    new_node = DoublyLinkedList(value)
     
-    if not self.head:
-      self.head = new_node
-
-    else:
-      self.prev.head = new_node
+    self.head = new_node
 
  
  
@@ -64,13 +66,9 @@ class DoublyLinkedList:
 
 
   def add_to_tail(self, value):
-    new_node = ListNode(value)
+    new_node = DoublyLinkedList(value)
 
-    if not self.tail:
-      self.tail = new_node
-
-    else:
-      self.prev.tail = new_node
+    self.tail = new_node
 
 
 
