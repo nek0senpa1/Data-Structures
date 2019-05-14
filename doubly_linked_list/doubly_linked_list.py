@@ -126,7 +126,24 @@ class DoublyLinkedList:
     self.tail.next = None
 
   def move_to_front(self, node):
-    pass
+    # old_front = self.head
+    #how do I reference the node I want... like, what is the syntax... ???
+    holder1 = node.prev
+    holder2 = node.next
+
+    node.prev =self.head.prev
+    node.next =self.head
+    
+    self.head.prev = node
+    
+    holder1.next = holder2
+    holder2.prev = holder1
+        
+    self.head = node
+
+    
+
+
 
   def move_to_end(self, node):
     pass
@@ -137,7 +154,7 @@ class DoublyLinkedList:
   def get_max(self):
     pass
 
-
+# ----------------------------------
 stuff = DoublyLinkedList()
 
 stuff.add_to_head('bob')
@@ -159,3 +176,5 @@ print(stuff)
 stuff.remove_from_tail()
 
 print(stuff)
+
+stuff.move_to_front('cheryl')
