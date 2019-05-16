@@ -126,22 +126,46 @@ class DoublyLinkedList:
     self.tail.next = None
 
   def move_to_front(self, node):
-    # old_front = self.head
-    #how do I reference the node I want... like, what is the syntax... ???
-    holder1 = node.prev
-    holder2 = node.next
+    
 
-    node.prev =self.head.prev
-    node.next =self.head
+    #how do I reference the node I want... like, what is the syntax... ???
+
+
+    # if node == self.tail:
+    #   self.tail = node.prev
+
+    # node.delete
+
+    # holder1 = node.prev
+    # holder2 = node.next
+
+    # node.prev =self.head.prev
+    # node.next =self.head
     
-    self.head.prev = node
+    # self.head.prev = node
     
-    holder1.next = holder2
-    holder2.prev = holder1
+    # holder1.next = holder2
+    # holder2.prev = holder1
         
+    # self.head = node
+
+    # chaChaRealSmooth = None
+
+    # if self.value == node:
+    #   chaChaRealSmooth = self
+    #   print(chaChaRealSmooth)
+
+    if self.head == self.tail:
+      pass
+
+    self.head.prev = node
+
+    node.next = self.head
+    node.prev = None
+    
     self.head = node
 
-    
+
 
 
 
@@ -177,4 +201,4 @@ stuff.remove_from_tail()
 
 print(stuff)
 
-stuff.move_to_front('cheryl')
+stuff.move_to_front(1)
