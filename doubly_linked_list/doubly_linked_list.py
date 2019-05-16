@@ -196,27 +196,33 @@ class DoublyLinkedList:
   def get_max(self):
     pass
     # get max WHAT ??? what am i getting a max of, or the max in ?
+
+
+
+
+
+
 # ----------------------------------
-stuff = DoublyLinkedList()
+# stuff = DoublyLinkedList()
 
-stuff.add_to_head('bob')
-stuff.add_to_head('susan')
-stuff.add_to_head('tom')
+# stuff.add_to_head('bob')
+# stuff.add_to_head('susan')
+# stuff.add_to_head('tom')
 
-print(stuff)
+# print(stuff)
 
-stuff.remove_from_head()
+# stuff.remove_from_head()
 
-print(stuff)
+# print(stuff)
 
-stuff.add_to_tail('cheryl')
-stuff.add_to_tail('roger')
-stuff.add_to_tail('is dead')
+# stuff.add_to_tail('cheryl')
+# stuff.add_to_tail('roger')
+# stuff.add_to_tail('is dead')
 
-print(stuff)
+# print(stuff)
 
-stuff.remove_from_tail()
+# stuff.remove_from_tail()
 
-print(stuff)
+# print(stuff)
 
 # stuff.move_to_front(1)

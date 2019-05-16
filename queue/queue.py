@@ -22,7 +22,6 @@ class Queue:
     self.storage.append(item)
 
   def dequeue(self):
-    self.size = self.size -1
 
     if self.size < 1:
       print('there is no queue...')
@@ -33,19 +32,21 @@ class Queue:
 
       del self.storage[0]
 
+      self.size = self.size -1
+
       return front
 
   def len(self):
     return self.size
 
 
-bob = Queue()
+# bob = Queue()
 
-bob.enqueue('Patty')
-bob.enqueue('Selma')
-bob.enqueue('Lenny')
-bob.enqueue('Carl')
+# bob.enqueue('Patty')
+# bob.enqueue('Selma')
+# bob.enqueue('Lenny')
+# bob.enqueue('Carl')
 
-print(bob)
+# print(bob)
 
-print(bob.len)
+# print(bob.len)
