@@ -40,13 +40,13 @@ class Queue:
     return self.size
 
 
-# bob = Queue()
+bob = Queue()
 
-# bob.enqueue('Patty')
-# bob.enqueue('Selma')
-# bob.enqueue('Lenny')
-# bob.enqueue('Carl')
+bob.enqueue('Patty')
+bob.enqueue('Selma')
+bob.enqueue('Lenny')
+bob.enqueue('Carl')
 
-# print(bob)
+print(bob)
 
-# print(bob.len)
+print(bob.len)

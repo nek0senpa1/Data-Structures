@@ -24,7 +24,7 @@ class BinarySearchTree:
       else:
         self.left.insert(value)
 
-    elif value >= self.value:
+    elif value > self.value:
       if not self.right:
         self.right = BinarySearchTree(value)
       
@@ -36,15 +36,17 @@ class BinarySearchTree:
     if target == self.value:
       return True
     
-    elif target < self.value:
+    if target < self.value:
       if not self.left:
         return False
 
       else:
         if target == self.left:
+          print('in true area for left')
           return True
         else:
-          self.left.contains(target)
+          return self.left.contains(target)
+          # garbage code ;p
 
     else: 
       if not self.right:
@@ -52,28 +54,49 @@ class BinarySearchTree:
 
       else:
         if target == self.right:
+          print('in true area for right')
           return True
         else:
-          self.right.contains(target) 
+          return self.right.contains(target) 
+
+    # if target < self.value:
+    #   self.left.contains(value)
+    # else:
+    #   self.right.contains(value)
 
 
 
   def get_max(self):
-    maxy = 0
+    maxy = self.value
 
     while self.right is not None:
 
-      if maxy < self.value:
-        maxy = self.value
+      # if maxy < self.value:
+      #   maxy = self.value
+      # maxy = self.value
 
-        self = self.right
+      self = self.right
+      print(self.value)
+      maxy = self.value
 
     return maxy
 
 
 
   def for_each(self, cb):
-    stuff = []
+    # stuff = []
+    cb(self.value)
+
+    if self.left is not None:
+      # cb(self.left.value)
+      self.left.for_each(cb)
+
+
+    if self.right is not None:
+      # cb(self.right.value)
+      self.right.for_each(cb)
+
+    
 
     
 
@@ -89,4 +112,7 @@ class BinarySearchTree:
 # troll.insert(16)
 # troll.insert(8)
 
-# print(troll)
+# troll.contains(5)
+# troll.contains(456)
+
+# print(troll.get_max())
