@@ -158,6 +158,8 @@ class DoublyLinkedList:
     if self.head == self.tail:
       pass
 
+    node.delete()
+
     self.head.prev = node
 
     node.next = self.head
@@ -170,14 +172,30 @@ class DoublyLinkedList:
 
 
   def move_to_end(self, node):
-    pass
+
+    if self.head == self.tail:
+      pass
+
+    node.delete()
+
+    self.tail.next = node
+    
+    node.next = None
+    node.prev = self.tail
+    
+    self.tail = node
+
+
 
   def delete(self, node):
-    pass
     
+    node.delete()
+    
+
+
   def get_max(self):
     pass
-
+    # get max WHAT ??? what am i getting a max of, or the max in ?
 # ----------------------------------
 stuff = DoublyLinkedList()
 
@@ -201,4 +219,4 @@ stuff.remove_from_tail()
 
 print(stuff)
 
-stuff.move_to_front(1)
+# stuff.move_to_front(1)
