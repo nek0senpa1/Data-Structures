@@ -11,7 +11,7 @@ class Queue:
       return "List is empty"
 
     for i in range(0,self.size):
-      s += self.storage[0]
+      s += self.storage[i]
       s += " "
       
     return s

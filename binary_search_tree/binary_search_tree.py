@@ -59,10 +59,7 @@ class BinarySearchTree:
         else:
           return self.right.contains(target) 
 
-    # if target < self.value:
-    #   self.left.contains(value)
-    # else:
-    #   self.right.contains(value)
+    
 
 
 

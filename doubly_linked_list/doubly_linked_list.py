@@ -194,7 +194,15 @@ class DoublyLinkedList:
 
 
   def get_max(self):
-    pass
+    maxo = self.value
+
+    while self is not None:
+      if self.value < self.next.value:
+        maxo = self.next.value
+        self = self.next
+      else:
+        self = self.next
+
     # get max WHAT ??? what am i getting a max of, or the max in ?
 
 
